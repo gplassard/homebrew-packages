@@ -6,11 +6,11 @@ class Woof < Formula
   homepage ""
 
   if Hardware::CPU.arm?
-    url "https://github.com/gplassard/woof/releases/download/v0.0.3/woof_Darwin_arm64.tar.gz"
-    sha256 "06830ce199792a313a4fbcb139d524fd609cad4a549e64e20a51d0bcdd333510"
+    url "https://github.com/gplassard/woof/releases/download/v0.0.5/woof_Darwin_arm64.tar.gz"
+    sha256 "ea57215bcdb76905423d54a002c57f82b1e7ccc4ae89f68698dcc0c9a4332fb3"
   else
-    url "https://github.com/gplassard/woof/releases/download/v0.0.3/woof_Darwin_x86_64.tar.gz"
-    sha256 "b63ea0a4c8d3f96fa0e4125fe1254a614efd8425e2f4e25cac7fa4f92a57fc2a"
+    url "https://github.com/gplassard/woof/releases/download/v0.0.5/woof_Darwin_x86_64.tar.gz"
+    sha256 "c8da12e5f6079b950c2fa62ea8b5fa8ced5418089ccf3b9bc94351c49a575e27"
   end
 
   license ""
