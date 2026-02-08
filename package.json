@@ -1,0 +1,15 @@
+{
+  "name": "homebrew-packages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "projen": "projen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@gplassard/projen-extensions": "^0.1.24"
+  }
+}
