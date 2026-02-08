@@ -44,8 +44,8 @@ upgradeWorkflow.addJob('upgrade', {
     },
     steps: [
         WorkflowActionsX.checkout(),
-        WorkflowActionsX.setupNode({}),
         WorkflowActionsX.setupPnpm({}),
+        WorkflowActionsX.setupNode({}),
         WorkflowActionsX.installDependencies({}),
         {
             name: 'Upgrade formulas',
