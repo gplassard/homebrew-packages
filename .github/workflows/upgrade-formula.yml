@@ -17,6 +17,14 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.PROJEN_APP_ID }}
+          private-key: ${{ secrets.PROJEN_APP_PRIVATE_KEY }}
+          contents: write
+          pullRequests: write
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -36,7 +44,7 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: Upgrade formulas
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |-
           
           FORMULAS="${{ github.event.inputs.formulas }}"
@@ -48,7 +56,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.generate_token.outputs.token }}
           commit_message: "chore: upgrade homebrew formulas"
           title: "chore: upgrade homebrew formulas"
           body: This PR upgrades the homebrew formulas to their latest versions.
