@@ -69,7 +69,7 @@ fi`,
             with: {
                 token: '${{ steps.generate_token.outputs.token }}',
                 commit_message: 'chore: upgrade homebrew formulas',
-                title: 'chore: upgrade homebrew formulas',
+                title: 'chore(upgrade): upgrade homebrew formulas',
                 body: 'This PR upgrades the homebrew formulas to their latest versions.',
                 branch: 'chore/upgrade-formulas',
             },
