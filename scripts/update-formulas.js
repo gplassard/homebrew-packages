@@ -1,6 +1,5 @@
 const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
-const path = require("path");
 const crypto = require("crypto");
 const https = require("https");
 
@@ -44,7 +43,7 @@ async function updateFormula(filePath) {
         return;
     }
 
-    const [fullUrl, baseUrl, owner, repoWithMaybeSuffix] = urlMatch;
+    const [fullLine, fullUrl, owner, repoWithMaybeSuffix] = urlMatch;
     const repo = repoWithMaybeSuffix.replace(/\/$/, "");
     
     const latestRelease = await getLatestRelease(owner, repo);
@@ -86,7 +85,9 @@ async function updateFormula(filePath) {
         const lines = content.split('\n');
         for (let i = 0; i < lines.length; i++) {
             if (lines[i].includes('url "')) {
-                const url = lines[i].match(/url "([^"]+)"/)[1].replace(/#\{version\}/g, latestVersion);
+                const urlMatchInLine = lines[i].match(/url "([^"]+)"/);
+                if (!urlMatchInLine) continue;
+                const url = urlMatchInLine[1].replace(/#\{version\}/g, latestVersion);
                 console.log(`Downloading ${url}...`);
                 const buffer = await downloadFile(url);
                 const newHash = calculateSHA256(buffer);
@@ -114,7 +115,7 @@ async function updateFormula(filePath) {
         console.log(`Updating ${filePath} from ${currentVersion} to ${latestVersion}`);
         
         const newUrl = fullUrl.replace(currentVersion, latestVersion).replace(currentVersion, latestVersion);
-        content = content.replace(fullUrl, `url "${newUrl}"`);
+        content = content.replace(fullUrl, newUrl);
         
         const downloadUrl = newUrl;
         console.log(`Downloading ${downloadUrl}...`);
