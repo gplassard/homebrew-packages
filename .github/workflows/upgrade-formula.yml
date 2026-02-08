@@ -21,6 +21,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.9.0
+          registry-url: https://npm.pkg.github.com
+          cache: pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.2
+      - name: Install dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm i --frozen-lockfile
       - name: Upgrade formulas
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,9 +41,9 @@ jobs:
           
           FORMULAS="${{ github.event.inputs.formulas }}"
           if [ -z "$FORMULAS" ]; then
-            npx projen upgrade-formula aws-credentials-switcher.rb jaw.rb pretty-logs.rb ssm-env.rb
+            node scripts/update-formulas.js aws-credentials-switcher.rb jaw.rb pretty-logs.rb ssm-env.rb
           else
-            npx projen upgrade-formula $(echo $FORMULAS | tr ',' ' ')
+            node scripts/update-formulas.js $(echo $FORMULAS | tr ',' ' ')
           fi
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6

@@ -44,6 +44,9 @@ upgradeWorkflow.addJob('upgrade', {
     },
     steps: [
         WorkflowActionsX.checkout(),
+        WorkflowActionsX.setupNode({}),
+        WorkflowActionsX.setupPnpm({}),
+        WorkflowActionsX.installDependencies({}),
         {
             name: 'Upgrade formulas',
             env: {
@@ -52,9 +55,9 @@ upgradeWorkflow.addJob('upgrade', {
             run: `
 FORMULAS="\${{ github.event.inputs.formulas }}"
 if [ -z "$FORMULAS" ]; then
-  npx projen upgrade-formula ${ALL_FORMULAS.join(' ')}
+  node scripts/update-formulas.js ${ALL_FORMULAS.join(' ')}
 else
-  npx projen upgrade-formula $(echo $FORMULAS | tr ',' ' ')
+  node scripts/update-formulas.js $(echo $FORMULAS | tr ',' ' ')
 fi`,
         },
         {
