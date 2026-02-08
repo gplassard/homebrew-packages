@@ -12,5 +12,8 @@
   "devDependencies": {
     "@gplassard/projen-extensions": "^0.1.24",
     "projen": "^0.99.11"
+  },
+  "dependencies": {
+    "@octokit/rest": "^22.0.1"
   }
 }

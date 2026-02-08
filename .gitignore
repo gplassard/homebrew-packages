@@ -11,3 +11,7 @@ node_modules/
 !/.github/workflows/pull-request-lint.yml
 !/.github/workflows/upgrade-nodejs-dependencies.yml
 !/.github/workflows/projen-synth.yml
+!/.github/workflows/datadog-software-composition-analysis.yml
+!/.github/workflows/datadog-static-analysis.yml
+!/static-analysis.datadog.yaml
+!/.github/workflows/upgrade-formula.yml
