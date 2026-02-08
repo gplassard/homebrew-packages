@@ -4,8 +4,8 @@
 class SsmEnv < Formula
   desc ""
   homepage ""
-  url "https://github.com/gplassard/ssm-env/releases/download/v0.4.0/ssm-env-x86_64-apple-darwin"
-  sha256 "f31ad339e481a17e428f05de1756ce0caf461ea6b22f5afba754e31991dd2e63"
+  url "https://github.com/gplassard/ssm-env/releases/download/v0.4.1/ssm-env-x86_64-apple-darwin"
+  sha256 "9e6b374f45e03733a6322367d05468b367c816c483b79ac9dbc20e74d6e49ecb"
   license ""
 
   def install
