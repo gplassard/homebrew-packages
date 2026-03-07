@@ -43,10 +43,10 @@ upgradeWorkflow.addJob('upgrade', {
         pullRequests: 'write',
     },
     steps: [
+        WorkflowActionsX.checkout(),
         WorkflowActionsX.generateGithubToken({
             permissions: { contents: 'write', pullRequests: 'write' }
         }),
-        WorkflowActionsX.checkout(),
         WorkflowActionsX.setupPnpm({}),
         WorkflowActionsX.setupNode({}),
         WorkflowActionsX.installDependencies({}),
@@ -65,10 +65,10 @@ fi`,
         },
         {
             name: 'Create Pull Request',
-            uses: 'peter-evans/create-pull-request@v6',
+            uses: 'peter-evans/create-pull-request@v8',
             with: {
                 token: '${{ steps.generate_token.outputs.token }}',
-                commit_message: 'chore: upgrade homebrew formulas',
+                'commit-message': 'chore: upgrade homebrew formulas',
                 title: 'chore(upgrade): upgrade homebrew formulas',
                 body: 'This PR upgrades the homebrew formulas to their latest versions.',
                 branch: 'chore/upgrade-formulas',

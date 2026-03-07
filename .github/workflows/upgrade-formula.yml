@@ -17,6 +17,10 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          fetch-depth: 0
       - name: Generate token
         id: generate_token
         uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf
@@ -25,10 +29,6 @@ jobs:
           private-key: ${{ secrets.PROJEN_APP_PRIVATE_KEY }}
           contents: write
           pullRequests: write
-      - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          fetch-depth: 0
       - name: Setup pnpm
         uses: pnpm/action-setup@c5ba7f7862a0f64c1b1a05fbac13e0b8e86ba08c
         with:
@@ -54,10 +54,10 @@ jobs:
             node scripts/update-formulas.js $(echo $FORMULAS | tr ',' ' ')
           fi
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ steps.generate_token.outputs.token }}
-          commit_message: "chore: upgrade homebrew formulas"
+          commit-message: "chore: upgrade homebrew formulas"
           title: "chore(upgrade): upgrade homebrew formulas"
           body: This PR upgrades the homebrew formulas to their latest versions.
           branch: chore/upgrade-formulas
