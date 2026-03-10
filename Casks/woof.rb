@@ -3,7 +3,7 @@ cask "woof" do
   name "woof"
   desc "Datadog CLI tool"
   homepage "https://github.com/gplassard/woof"
-  version "0.0.10"
+  version "0.0.12"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "woof" do
   on_macos do
     on_intel do
       url "https://github.com/gplassard/woof/releases/download/v#{version}/woof_Darwin_x86_64.tar.gz"
-      sha256 "ca010ab8d73f1f0146dd12fd4d23dbe45388c9ce5a9e8f9468388666bd7ef34e"
+      sha256 "d3dcea6da7dcd32c23bb10acaab861f9efd2a23a64994ed73fb16708df5520eb"
     end
     on_arm do
       url "https://github.com/gplassard/woof/releases/download/v#{version}/woof_Darwin_arm64.tar.gz"
-      sha256 "f15de998c7b4cc5c4a2e4b841852e9412410197758b72b70842e8f5abe7f358d"
+      sha256 "b0ef4236e05b407b31cc0dca550d1d388c4656bba08be8bcb85bbed185149174"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/gplassard/woof/releases/download/v#{version}/woof_Linux_x86_64.tar.gz"
-      sha256 "ae6489bf82b3668e1d09ce8173332d518b4330ac9e1e1933f6bd6bf68da97c0b"
+      sha256 "d422c506e6737ff5c6e36fe83f15160f5a22b3a1952cff0827a682bd374ab39a"
     end
     on_arm do
       url "https://github.com/gplassard/woof/releases/download/v#{version}/woof_Linux_arm64.tar.gz"
-      sha256 "90dccde0f1ab74fe400bce5bb925fbd7f949cf27ab55132f2b8e5d20ab9b5966"
+      sha256 "2578c88f6da34dcec7f29d67a3b0d5f5e1a0496f3e780a39879fe50951241f78"
     end
   end
 
