@@ -13,19 +13,19 @@ importers:
         version: 22.0.1
     devDependencies:
       '@gplassard/projen-extensions':
-        specifier: ^0.1.34
-        version: 0.1.34(constructs@10.4.5)(projen@0.99.17(constructs@10.4.5))
+        specifier: ^0.1.45
+        version: 0.1.45(constructs@10.4.5)(projen@0.99.34(constructs@10.4.5))
       projen:
-        specifier: ^0.99.17
-        version: 0.99.17(constructs@10.4.5)
+        specifier: ^0.99.34
+        version: 0.99.34(constructs@10.4.5)
 
 packages:
 
-  '@gplassard/projen-extensions@0.1.34':
-    resolution: {integrity: sha512-ASQ5oaVUSxdygH316WFjpnfYsJCgpGd2QzLtBnaVciXNvE25Iq3QExmIjMvQ6Uf0Yw8ImRyjII68BLr7RPXJlQ==, tarball: https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.1.34/f2b35dbe4b4820d7ef1d1f976a0e84fda389cbcf}
+  '@gplassard/projen-extensions@0.1.45':
+    resolution: {integrity: sha512-NvjC6lVXP3kcyEwfC2vLUPXIKSEya+rtz0nVTnjwsvDUeeoKkCON2tiHNUKYIQRi+U+GXqt/GwIey9nbJHJJcw==, tarball: https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.1.45/e024f8ab074c1040ae8d6c824818dde5d9ad1e63}
     peerDependencies:
-      constructs: ^10.5.1
-      projen: ^0.99.17
+      constructs: ^10.6.0
+      projen: ^0.99.34
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -35,8 +35,8 @@ packages:
     resolution: {integrity: sha512-DhGl4xMVFGVIyMwswXeyzdL4uXD5OGILGX5N8Y+f6W7LhC1Ze2poSNrkF/fedpVDHEEZ+PHFW0vL14I+mm8K3Q==}
     engines: {node: '>= 20'}
 
-  '@octokit/endpoint@11.0.2':
-    resolution: {integrity: sha512-4zCpzP1fWc7QlqunZ5bSEjxc6yLAlRTnDwKtgXfcI/FxxGoqedDG8V2+xJ60bV2kODqcGB+nATdtap/XYq2NZQ==}
+  '@octokit/endpoint@11.0.3':
+    resolution: {integrity: sha512-FWFlNxghg4HrXkD3ifYbS/IdL/mDHjh9QcsNyhQjN8dplUoZbejsdpmuqdA76nxj2xoWPs7p8uX2SNr9rYu0Ag==}
     engines: {node: '>= 20'}
 
   '@octokit/graphql@9.0.3':
@@ -68,8 +68,8 @@ packages:
     resolution: {integrity: sha512-KMQIfq5sOPpkQYajXHwnhjCC0slzCNScLHs9JafXc4RAJI+9f+jNDlBNaIMTvazOPLgb4BnlhGJOTbnN0wIjPw==}
     engines: {node: '>= 20'}
 
-  '@octokit/request@10.0.7':
-    resolution: {integrity: sha512-v93h0i1yu4idj8qFPZwjehoJx4j3Ntn+JhXsdJrG9pYaX6j/XRz2RmasMUHtNgQD39nrv/VwTWSqK0RNXR8upA==}
+  '@octokit/request@10.0.8':
+    resolution: {integrity: sha512-SJZNwY9pur9Agf7l87ywFi14W+Hd9Jg6Ifivsd33+/bGUQIjNujdFiXII2/qSlN2ybqUHfp5xpekMEjIBTjlSw==}
     engines: {node: '>= 20'}
 
   '@octokit/rest@22.0.1':
@@ -88,8 +88,11 @@ packages:
   fast-content-type-parse@3.0.0:
     resolution: {integrity: sha512-ZvLdcY8P+N8mGQJahJV5G4U88CSvT1rP8ApL6uETe88MBXrBHAkZlSEySdUlyztF7ccb+Znos3TFqaepHxdhBg==}
 
-  projen@0.99.17:
-    resolution: {integrity: sha512-QhfkTKFV4ecAPesqnF9Z7WQ9sXkb7D5ESzq4ciri5m5t8hTltAuC5o4x+P9vqvt/673avSVgSI74ARYdnDAzSw==}
+  json-with-bigint@3.5.8:
+    resolution: {integrity: sha512-eq/4KP6K34kwa7TcFdtvnftvHCD9KvHOGGICWwMFc4dOOKF5t4iYqnfLK8otCRCRv06FXOzGGyqE8h8ElMvvdw==}
+
+  projen@0.99.34:
+    resolution: {integrity: sha512-/eFaYhO9t00aIF9Vnb5WWoq/73gIM2fIiJq4QN+8ox8bXYebRpDmfCW2rlWVy6Oyi1z5qn6TDAHQWyJz+zdAfQ==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -115,10 +118,10 @@ packages:
 
 snapshots:
 
-  '@gplassard/projen-extensions@0.1.34(constructs@10.4.5)(projen@0.99.17(constructs@10.4.5))':
+  '@gplassard/projen-extensions@0.1.45(constructs@10.4.5)(projen@0.99.34(constructs@10.4.5))':
     dependencies:
       constructs: 10.4.5
-      projen: 0.99.17(constructs@10.4.5)
+      projen: 0.99.34(constructs@10.4.5)
 
   '@octokit/auth-token@6.0.0': {}
 
@@ -126,20 +129,20 @@ snapshots:
     dependencies:
       '@octokit/auth-token': 6.0.0
       '@octokit/graphql': 9.0.3
-      '@octokit/request': 10.0.7
+      '@octokit/request': 10.0.8
       '@octokit/request-error': 7.1.0
       '@octokit/types': 16.0.0
       before-after-hook: 4.0.0
       universal-user-agent: 7.0.3
 
-  '@octokit/endpoint@11.0.2':
+  '@octokit/endpoint@11.0.3':
     dependencies:
       '@octokit/types': 16.0.0
       universal-user-agent: 7.0.3
 
   '@octokit/graphql@9.0.3':
     dependencies:
-      '@octokit/request': 10.0.7
+      '@octokit/request': 10.0.8
       '@octokit/types': 16.0.0
       universal-user-agent: 7.0.3
 
@@ -163,12 +166,13 @@ snapshots:
     dependencies:
       '@octokit/types': 16.0.0
 
-  '@octokit/request@10.0.7':
+  '@octokit/request@10.0.8':
     dependencies:
-      '@octokit/endpoint': 11.0.2
+      '@octokit/endpoint': 11.0.3
       '@octokit/request-error': 7.1.0
       '@octokit/types': 16.0.0
       fast-content-type-parse: 3.0.0
+      json-with-bigint: 3.5.8
       universal-user-agent: 7.0.3
 
   '@octokit/rest@22.0.1':
@@ -188,7 +192,9 @@ snapshots:
 
   fast-content-type-parse@3.0.0: {}
 
-  projen@0.99.17(constructs@10.4.5):
+  json-with-bigint@3.5.8: {}
+
+  projen@0.99.34(constructs@10.4.5):
     dependencies:
       constructs: 10.4.5
 

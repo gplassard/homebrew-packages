@@ -14,4 +14,6 @@ node_modules/
 !/.github/workflows/datadog-software-composition-analysis.yml
 !/.github/workflows/datadog-static-analysis.yml
 !/static-analysis.datadog.yaml
+!/.github/workflows/datadog-secret-scanning.yml
+!/.github/workflows/datadog-infra-as-code-security.yml
 !/.github/workflows/upgrade-formula.yml
