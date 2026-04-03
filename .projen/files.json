@@ -1,6 +1,8 @@
 {
   "files": [
     ".gitattributes",
+    ".github/workflows/datadog-infra-as-code-security.yml",
+    ".github/workflows/datadog-secret-scanning.yml",
     ".github/workflows/datadog-software-composition-analysis.yml",
     ".github/workflows/datadog-static-analysis.yml",
     ".github/workflows/projen-synth.yml",
