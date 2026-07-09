@@ -41,6 +41,7 @@ upgradeWorkflow.addJob('upgrade', {
     permissions: {
         contents: 'write',
         pullRequests: 'write',
+        packages: 'read'
     },
     steps: [
         WorkflowActionsX.checkout(),
