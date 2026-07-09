@@ -1,4 +1,4 @@
-const { BaseProject, WorkflowActionsX } = require('@gplassard/projen-extensions');
+const { BaseProject, WorkflowActionsX, githubAction } = require('@gplassard/projen-extensions');
 const { GitHub } = require('projen/lib/github');
 
 const ALL_FORMULAS = [
@@ -41,6 +41,7 @@ upgradeWorkflow.addJob('upgrade', {
     permissions: {
         contents: 'write',
         pullRequests: 'write',
+        packages: 'read'
     },
     steps: [
         WorkflowActionsX.checkout(),
@@ -65,7 +66,7 @@ fi`,
         },
         {
             name: 'Create Pull Request',
-            uses: 'peter-evans/create-pull-request@v8',
+            uses: githubAction('peter-evans/create-pull-request'),
             with: {
                 token: '${{ steps.generate_token.outputs.token }}',
                 'commit-message': 'chore: upgrade homebrew formulas',
