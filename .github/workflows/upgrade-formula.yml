@@ -39,6 +39,12 @@ jobs:
           node-version: 24.16.0
           registry-url: https://npm.pkg.github.com
           cache: pnpm
+      - env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm view @gplassard/projen-extensions --registry=https://npm.pkg.github.com
+      - env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: 'curl -i -H "Authorization: Bearer $NODE_AUTH_TOKEN" https://npm.pkg.github.com/@gplassard%2Fprojen-extensions'
       - name: Install dependencies
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

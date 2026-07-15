@@ -50,6 +50,14 @@ upgradeWorkflow.addJob('upgrade', {
         }),
         WorkflowActionsX.setupPnpm({}),
         WorkflowActionsX.setupNode({}),
+        {
+            run: 'npm view @gplassard/projen-extensions --registry=https://npm.pkg.github.com',
+            env: { NODE_AUTH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' },
+        },
+        {
+            run: 'curl -i -H "Authorization: Bearer $NODE_AUTH_TOKEN" https://npm.pkg.github.com/@gplassard%2Fprojen-extensions',
+            env: { NODE_AUTH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' },
+        },
         WorkflowActionsX.installDependencies({}),
         {
             name: 'Upgrade formulas',
