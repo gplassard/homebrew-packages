@@ -14,10 +14,10 @@ importers:
     devDependencies:
       '@gplassard/projen-extensions':
         specifier: ^0.1.60
-        version: 0.1.60(constructs@10.4.5)(projen@0.101.4(constructs@10.4.5))
+        version: 0.1.60(constructs@10.4.5)(projen@0.101.23(constructs@10.4.5))
       projen:
-        specifier: ^0.101.4
-        version: 0.101.4(constructs@10.4.5)
+        specifier: ^0.101.23
+        version: 0.101.23(constructs@10.4.5)
 
 packages:
 
@@ -91,8 +91,8 @@ packages:
   json-with-bigint@3.5.8:
     resolution: {integrity: sha512-eq/4KP6K34kwa7TcFdtvnftvHCD9KvHOGGICWwMFc4dOOKF5t4iYqnfLK8otCRCRv06FXOzGGyqE8h8ElMvvdw==}
 
-  projen@0.101.4:
-    resolution: {integrity: sha512-85HQncbGc18c+Fc0dLtWag0GGUS5Vt37tf6xBb7tR6lUJHCFWNrQHvKD+7PuyzwryGDcezl60JhErH+Wpf06xg==}
+  projen@0.101.23:
+    resolution: {integrity: sha512-gI1vvX7NdhtnRVT2GqMwymq9Z25YNGw7xtp89gXPtomn+GfmBEnLo80GDyEM8qTYxqTZXG5axMb137PCT2uzwQ==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -118,10 +118,10 @@ packages:
 
 snapshots:
 
-  '@gplassard/projen-extensions@0.1.60(constructs@10.4.5)(projen@0.101.4(constructs@10.4.5))':
+  '@gplassard/projen-extensions@0.1.60(constructs@10.4.5)(projen@0.101.23(constructs@10.4.5))':
     dependencies:
       constructs: 10.4.5
-      projen: 0.101.4(constructs@10.4.5)
+      projen: 0.101.23(constructs@10.4.5)
 
   '@octokit/auth-token@6.0.0': {}
 
@@ -194,7 +194,7 @@ snapshots:
 
   json-with-bigint@3.5.8: {}
 
-  projen@0.101.4(constructs@10.4.5):
+  projen@0.101.23(constructs@10.4.5):
     dependencies:
       constructs: 10.4.5
 

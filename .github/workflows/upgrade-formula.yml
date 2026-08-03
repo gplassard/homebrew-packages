@@ -19,6 +19,7 @@ jobs:
       packages: read
     steps:
       - name: Checkout
+        id: checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           fetch-depth: 0
@@ -31,19 +32,23 @@ jobs:
           contents: write
           pullRequests: write
       - name: Setup pnpm
+        id: setup_pnpm
         uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa
         with:
           version: 11.5.1
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+      - id: auto_f666a58d
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24.16.0
           registry-url: https://npm.pkg.github.com
           cache: pnpm
       - name: Install dependencies
+        id: install_dependencies
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm i --frozen-lockfile
       - name: Upgrade formulas
+        id: upgrade_formulas
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |-
@@ -55,6 +60,7 @@ jobs:
             node scripts/update-formulas.js $(echo $FORMULAS | tr ',' ' ')
           fi
       - name: Create Pull Request
+        id: create_pull_request
         uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676
         with:
           token: ${{ steps.generate_token.outputs.token }}
