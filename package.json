@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gplassard/projen-extensions": "^0.1.60",
-    "projen": "^0.101.23"
+    "@gplassard/projen-extensions": "^0.1.73",
+    "projen": "^0.103.15"
   },
   "dependencies": {
     "@octokit/rest": "^22.0.1"
