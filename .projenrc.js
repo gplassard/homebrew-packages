@@ -48,7 +48,7 @@ upgradeWorkflow.addJob('upgrade', {
         WorkflowActionsX.generateGithubToken({
             permissions: { contents: 'write', pullRequests: 'write' }
         }),
-        WorkflowActionsX.setupPnpm({}),
+        WorkflowActionsX.setupPnpm({ install: false }),
         WorkflowActionsX.setupNode({}),
         WorkflowActionsX.installDependencies({}),
         {
