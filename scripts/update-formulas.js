@@ -33,6 +33,35 @@ function calculateSHA256(buffer) {
     return crypto.createHash("sha256").update(buffer).digest("hex");
 }
 
+async function updateReleaseFormula(content, latestVersion, downloadAndHash) {
+    const lines = content.split('\n');
+
+    for (let i = 0; i < lines.length; i++) {
+        const urlMatch = lines[i].match(/url "([^"]+)"/);
+        if (!urlMatch) continue;
+
+        const url = urlMatch[1];
+        if (!url.includes("/releases/download/") && !url.includes("/archive/refs/tags/")) continue;
+
+        const newUrl = url.replace(
+            /(releases\/download\/v|archive\/refs\/tags\/v)[^/\"]+(?=\/|\.tar\.gz)/,
+            `$1${latestVersion}`
+        );
+        lines[i] = lines[i].replace(url, newUrl);
+
+        for (let j = i + 1; j < lines.length; j++) {
+            if (lines[j].includes('url "')) break;
+            if (lines[j].includes('sha256 "')) {
+                const newHash = await downloadAndHash(newUrl);
+                lines[j] = lines[j].replace(/sha256 "[^"]+"/, `sha256 "${newHash}"`);
+                break;
+            }
+        }
+    }
+
+    return lines.join('\n');
+}
+
 async function updateFormula(filePath) {
     console.log(`Checking ${filePath}...`);
     let content = fs.readFileSync(filePath, "utf8");
@@ -114,15 +143,11 @@ async function updateFormula(filePath) {
 
         console.log(`Updating ${filePath} from ${currentVersion} to ${latestVersion}`);
         
-        const newUrl = fullUrl.replace(currentVersion, latestVersion).replace(currentVersion, latestVersion);
-        content = content.replace(fullUrl, newUrl);
-        
-        const downloadUrl = newUrl;
-        console.log(`Downloading ${downloadUrl}...`);
-        const buffer = await downloadFile(downloadUrl);
-        const newHash = calculateSHA256(buffer);
-        
-        content = content.replace(/sha256 "[^"]+"/, `sha256 "${newHash}"`);
+        content = await updateReleaseFormula(content, latestVersion, async (downloadUrl) => {
+            console.log(`Downloading ${downloadUrl}...`);
+            const buffer = await downloadFile(downloadUrl);
+            return calculateSHA256(buffer);
+        });
     }
 
     fs.writeFileSync(filePath, content);
@@ -146,4 +171,8 @@ async function main() {
     }
 }
 
-main();
+if (require.main === module) {
+    main();
+}
+
+module.exports = { updateReleaseFormula };
