@@ -13,19 +13,19 @@ importers:
         version: 22.0.1
     devDependencies:
       '@gplassard/projen-extensions':
-        specifier: ^0.1.73
-        version: 0.1.73(constructs@10.4.5)(projen@0.103.15(constructs@10.4.5))
+        specifier: ^0.1.79
+        version: 0.1.79(constructs@10.8.1)(projen@0.103.27(constructs@10.8.1))
       projen:
-        specifier: ^0.103.15
-        version: 0.103.15(constructs@10.4.5)
+        specifier: ^0.103.27
+        version: 0.103.27(constructs@10.8.1)
 
 packages:
 
-  '@gplassard/projen-extensions@0.1.73':
-    resolution: {integrity: sha512-1fpOG+FlEqUnkx1fKKLIfZS38Hro9YbRcOdhHFwPdl/Bfd1u9MZS6lJANkbetl8F5kXOGjxwAPqrIYey9qtHLg==, tarball: https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.1.73/0b9925be7fdc9f9a76a02ae22df8345f47057267}
+  '@gplassard/projen-extensions@0.1.79':
+    resolution: {integrity: sha512-Pb71sCf0Sa2cAAGmqXUOLcnzwGLBD1UPQUVQ1yQL1ROBkdUvPOL7mbhgT6aKsFIltovOlj8POFHz6iFFCuKp0g==, tarball: https://npm.pkg.github.com/download/@gplassard/projen-extensions/0.1.79/98112331bbabee806a4a7c5e1f6f6cfb077b213b}
     peerDependencies:
       constructs: ^10.8.1
-      projen: ^0.99.70
+      projen: ^0.103.27
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -82,8 +82,8 @@ packages:
   before-after-hook@4.0.0:
     resolution: {integrity: sha512-q6tR3RPqIB1pMiTRMFcZwuG5T8vwp+vUvEG0vuI6B+Rikh5BfPp2fQ82c925FOs+b0lcFQ8CFrL+KbilfZFhOQ==}
 
-  constructs@10.4.5:
-    resolution: {integrity: sha512-fOoP70YLevMZr5avJHx2DU3LNYmC6wM8OwdrNewMZou1kZnPGOeVzBrRjZNgFDHUlulYUjkpFRSpTE3D+n+ZSg==}
+  constructs@10.8.1:
+    resolution: {integrity: sha512-98yGXYyhePqPYh3cYu8nzBERmAhC0DONe3UD03okK0nehZ7hYP4wgZuf02a04+uOWxnTJ5Rpp5m0GRNpwyLGGA==}
 
   fast-content-type-parse@3.0.0:
     resolution: {integrity: sha512-ZvLdcY8P+N8mGQJahJV5G4U88CSvT1rP8ApL6uETe88MBXrBHAkZlSEySdUlyztF7ccb+Znos3TFqaepHxdhBg==}
@@ -91,8 +91,8 @@ packages:
   json-with-bigint@3.5.8:
     resolution: {integrity: sha512-eq/4KP6K34kwa7TcFdtvnftvHCD9KvHOGGICWwMFc4dOOKF5t4iYqnfLK8otCRCRv06FXOzGGyqE8h8ElMvvdw==}
 
-  projen@0.103.15:
-    resolution: {integrity: sha512-7L9ubnWJlwz/BXk2Whv0AvX+YNM3pnHrzFj5Ethw0m1CQcU3dotqmqFxfy5CrfWkK/4Y+wfTELJOZjvKQenjFA==}
+  projen@0.103.27:
+    resolution: {integrity: sha512-dtcvFZOIhQ+AYOeOhSDSReKCgcYbrAFsKZMM+JzlA9v0icegQAolZDHhdNTDaSYODfRSgVzE+U/B2jfdImSsNQ==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -119,10 +119,10 @@ packages:
 
 snapshots:
 
-  '@gplassard/projen-extensions@0.1.73(constructs@10.4.5)(projen@0.103.15(constructs@10.4.5))':
+  '@gplassard/projen-extensions@0.1.79(constructs@10.8.1)(projen@0.103.27(constructs@10.8.1))':
     dependencies:
-      constructs: 10.4.5
-      projen: 0.103.15(constructs@10.4.5)
+      constructs: 10.8.1
+      projen: 0.103.27(constructs@10.8.1)
 
   '@octokit/auth-token@6.0.0': {}
 
@@ -189,14 +189,14 @@ snapshots:
 
   before-after-hook@4.0.0: {}
 
-  constructs@10.4.5: {}
+  constructs@10.8.1: {}
 
   fast-content-type-parse@3.0.0: {}
 
   json-with-bigint@3.5.8: {}
 
-  projen@0.103.15(constructs@10.4.5):
+  projen@0.103.27(constructs@10.8.1):
     dependencies:
-      constructs: 10.4.5
+      constructs: 10.8.1
 
   universal-user-agent@7.0.3: {}
